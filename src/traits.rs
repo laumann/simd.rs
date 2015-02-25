@@ -8,7 +8,13 @@ pub trait Simd: Add<Output=Self> + Copy + Div<Output=Self> + Mul<Output=Self> + 
 }
 
 /// SIMD vector
-pub trait Vector: Add<Output=Self> + Copy + Div<Output=Self> + Mul<Output=Self> + Sub<Output=Self> {
+pub trait Vector:
+    Add<Output=Self> +
+    Copy +
+    Div<Output=Self> +
+    Mul<Output=Self> +
+    Sub<Output=Self>
+{
     type Elem: Simd<Vector=Self>;
 
     /// Casts e.g. `&[f32]` into an *aligned* `&[f32x4]`, the elements that don't fit in the
