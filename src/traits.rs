@@ -4,6 +4,7 @@ use std::ops::{Add, Div, Mul, Sub};
 
 /// Any type that can be SIMD accelerated
 pub trait Simd: Add<Output=Self> + Copy + Div<Output=Self> + Mul<Output=Self> + Sub<Output=Self> {
+    /// The SIMD vector associated to this type
     type Vector: Vector<Elem=Self>;
 }
 
@@ -15,6 +16,7 @@ pub trait Vector:
     Mul<Output=Self> +
     Sub<Output=Self>
 {
+    /// Each element of the SIMD vector
     type Elem: Simd<Vector=Self>;
 
     /// Casts e.g. `&[f32]` into an *aligned* `&[f32x4]`, the elements that don't fit in the
