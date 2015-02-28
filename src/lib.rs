@@ -54,8 +54,8 @@ pub fn sum<T>(slice: &[T]) -> T where
 
     use traits::Vector;
 
-    let (head, body, tail) = <T::Vector as Vector>::cast(slice);
-    let sum = body.iter().map(|&x| x).fold(<T::Vector as Vector>::zeroed(), Add::add).sum();
+    let (head, body, tail) = T::Vector::cast(slice);
+    let sum = body.iter().map(|&x| x).fold(T::Vector::zeroed(), Add::add).sum();
     let sum = head.iter().map(|&x| x).fold(sum, Add::add);
     tail.iter().map(|&x| x).fold(sum, Add::add)
 }

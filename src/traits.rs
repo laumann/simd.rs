@@ -29,21 +29,21 @@ pub trait Vector:
     /// use simd::traits::Vector;
     ///
     /// let v: Vec<_> = (0..10).map(|x| x as f32).collect();
-    /// let (head, body, tail) = <f32x4 as Vector>::cast(&v);
+    /// let (head, body, tail) = f32x4::cast(&v);
     ///
     /// assert_eq!(format!("{:?}", head), "[]");
     /// assert_eq!(format!("{:?}", body), "[f32x4(0, 1, 2, 3), f32x4(4, 5, 6, 7)]");
     /// assert_eq!(format!("{:?}", tail), "[8, 9]");
     ///
     /// let slice = &v[1..5];
-    /// let (head, body, tail) = <f32x4 as Vector>::cast(slice);
+    /// let (head, body, tail) = f32x4::cast(slice);
     ///
     /// assert_eq!(format!("{:?}", head), "[1, 2, 3, 4]");
     /// assert_eq!(format!("{:?}", body), "[]");
     /// assert_eq!(format!("{:?}", tail), "[]");
     ///
     /// let slice = &v[2..];
-    /// let (head, body, tail) = <f32x4 as Vector>::cast(slice);
+    /// let (head, body, tail) = f32x4::cast(slice);
     ///
     /// assert_eq!(format!("{:?}", head), "[2, 3]");
     /// assert_eq!(format!("{:?}", body), "[f32x4(4, 5, 6, 7)]");
