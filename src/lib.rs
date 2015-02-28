@@ -47,7 +47,9 @@ pub struct f64x2(pub f64, pub f64);
 /// test bench::f64::plain::sum ... bench:    995390 ns/iter (+/- 27834)
 /// test bench::f64::simd::sum  ... bench:    504943 ns/iter (+/- 22928)
 /// ```
-pub fn sum<T: Simd>(slice: &[T]) -> T {
+pub fn sum<T>(slice: &[T]) -> T where
+    T: Simd,
+{
     use std::ops::Add;
 
     use traits::Vector;
