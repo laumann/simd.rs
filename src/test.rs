@@ -1,3 +1,5 @@
+#![allow(trivial_casts)]
+
 use rand::{Rand, Rng, XorShiftRng, self};
 
 pub fn vec<T>(n: usize) -> Vec<T> where T: Rand {

@@ -8,7 +8,7 @@
 #![feature(plugin)]
 #![feature(simd)]
 
-#[cfg(test)] extern crate "test" as stdtest;
+#[cfg(test)] extern crate test as stdtest;
 #[cfg(test)] extern crate approx;
 #[cfg(test)] extern crate quickcheck;
 #[cfg(test)] extern crate rand;
