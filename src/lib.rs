@@ -26,12 +26,12 @@ mod f64;
 pub mod traits;
 
 #[allow(missing_docs, non_camel_case_types)]
-#[derive(Copy, Debug)]
+#[derive(Clone, Copy, Debug)]
 #[simd]
 pub struct f32x4(pub f32, pub f32, pub f32, pub f32);
 
 #[allow(missing_docs, non_camel_case_types)]
-#[derive(Copy, Debug)]
+#[derive(Clone, Copy, Debug)]
 #[simd]
 pub struct f64x2(pub f64, pub f64);
 
