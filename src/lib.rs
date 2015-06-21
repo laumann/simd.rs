@@ -4,7 +4,7 @@
 #![cfg_attr(test, plugin(quickcheck_macros))]
 #![deny(missing_docs)]
 #![deny(warnings)]
-#![feature(core)]
+#![feature(raw)]
 #![feature(plugin)]
 #![feature(simd)]
 
